@@ -1,5 +1,4 @@
 # SciArt2Code
-A project focused on Local LLM powered scientific article to computational method implementation.
 
 **Local Scientific Agent: Secure Paper-to-Code Implementation**
 
