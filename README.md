@@ -107,7 +107,7 @@ This will open the dashboard in your web browser. From there, you can specify th
 
 
 **Dynamic Context Resolution via RivalSearch MCP**
-While the core intelligence and code execution remain local, the pipeline features a seamless integration with the **RivalSearch MCP** (Model Context Protocol) server. Scientific papers frequently lack complete context—referencing undocumented libraries, obscure concepts, or mathematical constants without explanation. Rather than hallucinating missing information, the Analyst Agent utilizes the RivalSearch MCP tools to dynamically perform web research, fetching accurate, up-to-date context to ensure the final generated code is highly accurate. The current integration of RivalSearch MCP sends search queries to an external MCP server. If you want to change MCP tool or self host it or disable it completely, you can disable, locally host, or replace the RivalSearch MCP integration in your `agents.py` file.
+While the core intelligence and code execution remain local, the pipeline features a seamless integration with the **RivalSearch MCP** (Model Context Protocol) server. Scientific papers frequently lack complete context—referencing undocumented libraries, obscure concepts, or mathematical constants without explanation. Rather than hallucinating missing information, the Analyst Agent utilizes the RivalSearch MCP tools to dynamically perform web research, fetching accurate, up-to-date context to ensure the final generated code is highly accurate. The current integration of RivalSearch MCP sends search queries to an external MCP server. If you want to change MCP tool or self host it or disable it completely, you can modify the `agents.py` file.
 
 ---
 
