@@ -2,7 +2,7 @@
 
 **Local Scientific Agent: Secure Paper-to-Code Implementation**
 
-This project is a local-LLM-driven pipeline designed to ingest scientific research papers, extract methodologies, and autonomously implement them into functional Python code within isolated Podman sandboxes. Generated code by this first alpha version is more akin to pseudocode / code scaffold rather than production ready code. The sandboxed executions may fail due to missing python imports and for other reasons.
+This project is a local-LLM-driven pipeline designed to ingest scientific research papers, extract methodologies, and autonomously implement them into functional Python code within isolated Podman sandboxes. Generated code by this first alpha version is more akin to pseudocode / code scaffold rather than production ready code. The sandboxed executions may fail due to missing python imports and for other reasons as the development for execution is going to occur in the future after the work on coding agent's output is completed.
 
 This repository was purpose-built to endow researchers and scientists with resilient, locally-hosted scientific research tools. Due to increasing geopolitical risks surrounding the access, privacy, and availability of online AI services, relying on cloud-based frontier models for sensitive research is becoming a vulnerability. By leveraging local orchestrator and coder models via `llama.cpp`, this tool ensures that your scientific IP and execution environments remain uncensored and under your absolute control.
 
