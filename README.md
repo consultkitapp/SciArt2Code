@@ -173,7 +173,7 @@ MCP_SERVER_URL = "http://localhost:8000/mcp"
 
 ## Option 3: Replace MCP with an Alternative Search Tool
 
-If you want to replace FastMCP with a standard Python search library (like DuckDuckGo Search or Tavily), you can wrap it as a LangChain tool and pass it directly to `create_react_agent`.
+If you want to replace the current MCP with a standard Python search library (like DuckDuckGo Search or Tavily), you can wrap it as a LangChain tool and pass it directly to `create_react_agent`.
 
 ### Step 1: Install a local search package
 
