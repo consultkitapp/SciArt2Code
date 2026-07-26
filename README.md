@@ -9,6 +9,96 @@ This repository was purpose-built to endow researchers and scientists with resil
 
 *Note: For users operating without strict offline requirements or those seeking to leverage advanced cloud-based frontier LLMs (e.g., GPT-4o, Claude 3.5 Sonnet), there are other excellent open-source projects available on GitHub, such as **Paper2Code**, **Deepcode**, and **Paper2Agent**.*
 
+Here is the step-by-step guide to setting up and running your local scientific agent pipeline.
+
+### 1. System Prerequisites
+
+Before starting, ensure your host machine has the following installed:
+
+* **Python 3.10+**
+* **Podman:** Required for creating the isolated execution sandboxes.
+
+
+* **llama.cpp (`llama-server`):** Compiled and accessible in your project root to serve the local LLMs.
+
+
+
+### 2. Prepare the Python Environment
+
+Create a clean virtual environment and install the strictly pinned dependencies.
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+pip install -r requirements.txt
+
+```
+
+### 3. Download the Local LLM Weights
+
+The system relies on two specific GGUF models. You need to download them and place them in the exact directory structure expected by the `start_servers.sh` script.
+
+1. Create the model directories:
+```bash
+mkdir -p ./agent_workspace/models/Qwen3.6-35B-A3B-GGUF/
+mkdir -p ./agent_workspace/models/Qwen3.5-9B-GGUF/
+
+```
+
+
+2. Download the Orchestrator model (`Qwen3.6-35B-A3B-Q6_K.gguf`) and place it in the first folder.
+
+
+3. Download the Coder model (`Qwen3.5-9B-Q8_0.gguf`) and place it in the second folder.
+
+
+
+### 4. Initialize the Podman Sandboxes
+
+Run the sandbox setup script to pull the base Python image and launch the 4 concurrent background containers (`qwen-sandbox-1` through `qwen-sandbox-4`).
+
+```bash
+chmod +x setup_sandboxes.sh
+./setup_sandboxes.sh
+
+```
+
+### 5. Boot the Local LLM Servers
+
+Run the server startup script. This will launch the Orchestrator model on port 8080 and the Coder model on port 8081.
+
+```bash
+chmod +x start_servers.sh
+./start_servers.sh
+
+```
+
+Note: This script will run the servers in the background and pipe their output to `orchestrator.log` and `agents.log`. Ensure your machine has sufficient VRAM (~40GB total) to host both models simultaneously.
+
+### 6. Run the Application
+
+You can interact with the system using either the Command Line Interface or the Web GUI. Before running, ensure you have placed your target scientific papers (PDFs) into the `agent_workspace/papers/` directory.
+
+**Option A: Command Line Interface**
+Use this for processing a single paper interactively.
+
+```bash
+python main.py
+
+```
+
+When prompted, enter the path to your PDF (e.g., `./agent_workspace/papers/paper1.pdf`).
+
+**Option B: Streamlit Web Dashboard**
+Use this to utilize the 4 concurrent Podman pods and process multiple papers in parallel.
+
+```bash
+streamlit run dashboard.py
+
+```
+
+This will open the dashboard in your web browser. From there, you can specify the paths to multiple PDFs and click "Run Concurrent Analysis" to watch the real-time extraction and execution.
+
 ---
 
 ### Missing Features & Roadmap
