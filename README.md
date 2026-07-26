@@ -1,13 +1,16 @@
 # SciArt2Code
 A project focused on Local LLM powered scientific article to computational method implementation.
 
-**Local Scientific Agent: Offline Paper-to-Code Implementation**
+**Local Scientific Agent: Secure Paper-to-Code Implementation**
 
-This project is a strictly **Local LLM Only** pipeline designed to ingest scientific research papers, extract methodologies, and autonomously implement them into functional Python code within secure, isolated Podman sandboxes.
+This project is a local-LLM-driven pipeline designed to ingest scientific research papers, extract methodologies, and autonomously implement them into functional Python code within isolated Podman sandboxes.
 
-This repository was purpose-built to endow researchers and scientists with resilient, local scientific research tools. Due to increasing geopolitical risks surrounding the access, privacy, and availability of online AI services, relying on cloud-based frontier models for sensitive research is becoming a vulnerability. By leveraging locally hosted orchestrator and coder models via `llama.cpp`, this tool ensures that your scientific IP and execution environments remain entirely offline, uncensored, and under your absolute control.
+This repository was purpose-built to endow researchers and scientists with resilient, locally-hosted scientific research tools. Due to increasing geopolitical risks surrounding the access, privacy, and availability of online AI services, relying on cloud-based frontier models for sensitive research is becoming a vulnerability. By leveraging local orchestrator and coder models via `llama.cpp`, this tool ensures that your scientific IP and execution environments remain uncensored and under your absolute control.
 
-*Note: For users operating without strict offline requirements or those seeking to leverage advanced cloud-based frontier LLMs (e.g., GPT-4o, Claude 3.5 Sonnet), there are other excellent open-source projects available on GitHub, such as **Paper2Code**, **Deepcode**, and **Paper2Agent**.*
+**Dynamic Context Resolution via RivalSearch MCP**
+While the core intelligence and code execution remain local, the pipeline features a seamless integration with the **RivalSearch MCP** (Model Context Protocol) server. Scientific papers frequently lack complete context—referencing undocumented libraries, obscure concepts, or mathematical constants without explanation. Rather than hallucinating missing information, the Analyst Agent utilizes the RivalSearch MCP tools to dynamically perform web research, fetching accurate, up-to-date context to ensure the final generated code is highly accurate.
+
+*Note: For users operating without strict privacy requirements or those seeking to leverage advanced cloud-based frontier LLMs (e.g., GPT-4o, Claude 3.5 Sonnet), there are other excellent open-source projects available on GitHub, such as **[Paper2Code](https://github.com/going-doer/paper2code)**, **[DeepCode](https://github.com/HKUDS/DeepCode)**, and **[Paper2Agent](https://github.com/jmiao24/Paper2Agent)**.*
 
 Here is the step-by-step guide to setting up and running your local scientific agent pipeline.
 
