@@ -1,4 +1,5 @@
 # SciArt2Code
+# Disclaimer: Created with various LLMs, merging their outputs.
 
 **Local Scientific Agent: Secure Paper-to-Code Implementation**
 
